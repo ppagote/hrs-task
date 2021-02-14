@@ -57,14 +57,6 @@ Out of Scope
             <li><a href="#others">Others</a></li>
          </ul>
       </li>
-      <li><a href="#features-and-to-do">Features and To-Do</a></li>
-      <li>
-         <a href="#getting-started">Getting Started</a>
-         <ul>
-            <li><a href="#prerequisites">Prerequisites</a></li>
-            <li><a href="#eer-diagram">EER Diagram</a></li>
-         </ul>
-      </li>
       <li>
          <a href="#installing">Installing</a>
          <ul>
@@ -81,19 +73,12 @@ Out of Scope
                   </li>
                </ul>
             </li>
-            <li><a href="#running-the-application-via-docker-container">Running the application via docker container</a></li>
-         </ul>
-      </li>
-      <li>
-         <a href="#deployment">Deployment</a>
-         <ul>
-            <li><a href="#deploying-to-heroku">Deploying to Heroku</a></li>
          </ul>
       </li>
       <li>
          <a href="#code-coverage">Code Coverage</a>
          <ul>
-            <li><a href="#cobertura">Cobertura</a></li>
+            <li><a href="#jacoco">Jacoco</a></li>
          </ul>
       </li>
       <li>
@@ -101,22 +86,8 @@ Out of Scope
          <ul>
             <li><a href="#testing-with-postman-runner">Testing with Postman Runner</a></li>
             <li><a href="#testing-with-maven">Testing with Maven</a></li>
-            <li><a href="#basic-load-testing">Basic Load Testing</a></li>
          </ul>
       </li>
-      <li><a href="#security">Security</a></li>
-      <li><a href="#explore-rest-apis">Explore Rest APIs</a></li>
-      <li><a href="#documentation">Documentation</a></li>
-      <li><a href="#internationalization--i18n-">Internationalization (i18n)</a></li>
-      <li>
-         <a href="#files-and-directories-structure">Files and Directories Structure</a>
-      </li>
-      <li><a href="#reporting-issues-suggest-improvements">Reporting Issues/Suggest Improvements</a></li>
-	  <li><a href="#changelog">Changelog</a></li>
-      <li><a href="#the-end">The End</a></li>
-      <li><a href="#contributing">Contributing</a></li>
-      <li><a href="#license">License</a></li>
-      <li><a href="#fossa-third-party-code--license-compliance-and-vulnerabilities">FOSSA third-party code, license compliance and vulnerabilities</a></li>
       <li><a href="#contact">Contact</a></li>
    </ul>
 </details>
@@ -183,8 +154,8 @@ the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/r
 like so:
 
 ```shell
-$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
-$ cd Spring-Boot-Application-Template
+$ git clone https://github.com/ppagote/hrs-task.git
+$ cd hrs-task
 $ mvn spring-boot:run
 ```
 
@@ -194,10 +165,10 @@ The code can also be built into a jar and then executed/run. Once the jar is bui
 or by using the command
 
 ```shell
-$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
-$ cd Spring-Boot-Application-Template
+$ git clone https://github.com/ppagote/hrs-task.git
+$ cd hrs-task
 $ mvn package -DskipTests
-$ java -jar target/SBtemplate-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
+$ java -jar target/hrs-task-0.0.1-SNAPSHOT.jar
 ```
 
 To shutdown the jar, follow the below mentioned steps on a Windows machine.
@@ -234,9 +205,13 @@ $ mvn test
 
 This will create a detailed HTML style report showing code coverage statistics gathered via code instrumentation.
 
-**Spring-Boot-Application-Template\target\site\jacoco**
+**hrs-task\target\site\jacoco**
 
 ## Testing API
+
+### Testing with Postman Runner
+
+Import the **HRS.postman_collection.json** file into postman and run the API tests.
 
 ### Testing with Maven
 
@@ -248,7 +223,7 @@ $ mvn clean test
 
 ## Documentation
 
-* [Swagger](http://localhost:8080/swagger-ui/) - `http://localhost:8080/swagger-ui.html`- Documentation & Testing
+* [Swagger](http://localhost:8080/swagger-ui/) - `http://localhost:8080/swagger-ui/`- Documentation & Testing
 * [Swagger](http://localhost:8080/v2/api-docs)
   - `http://localhost:8080/v2/api-docs`- Documentation & Testing
   
@@ -259,4 +234,4 @@ $ mvn clean test
 Pranav Pagote - pranav1990.pagote@gmail.com
 
 Project
-Link: [https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template)
+Link: [https://github.com/ppagote/hrs-task](https://github.com/ppagote/hrs-task.git)
