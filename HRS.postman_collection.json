@@ -113,28 +113,6 @@
 			"response": []
 		},
 		{
-			"name": "List all checked out users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/users/v1/listcheckedout",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"users",
-						"v1",
-						"listcheckedout"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Get User Details",
 			"request": {
 				"method": "GET",

@@ -13,6 +13,6 @@ public interface UserRepository extends JpaRepository<UserDetails, Long> {
     @Query
     List<UserDetails> findByHasCheckedOutFalse();
 
-    @Query
-    List<UserDetails> findByHasCheckedOutTrue();
+    /*@Query
+    List<UserDetails> findByHasCheckedOutTrue();*/
 }

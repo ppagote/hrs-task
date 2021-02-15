@@ -38,7 +38,7 @@ public class UserController {
         return userService.listAllCheckedInUsers();
     }
 
-    @GetMapping(value = "/listcheckedout", produces = MediaType.APPLICATION_JSON_VALUE)
+    /*@GetMapping(value = "/listcheckedout", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Find all users which are checked out",
             notes = "Retrieving the collection of user", response = UserDetails[].class)
     @ApiResponses({
@@ -48,7 +48,7 @@ public class UserController {
     })
     public List<UserDetails> listCheckedOutUsers() {
         return userService.listAllCheckedOutUsers();
-    }
+    }*/
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Find the user by ID",
@@ -100,13 +100,8 @@ public class UserController {
             @ApiParam(required = true, name = "update", value = "update the parcel status")
             @RequestBody @Validated(UpdateParcelInfo.class) InputUserDetails inputUserDetails)
             throws NotFoundException, UserCheckOutException {
-        UserDetails userDetails = new UserDetails();
-        /*userDetails.setLastName(inputUserDetails.getLastName());
-        userDetails.setFirstName(inputUserDetails.getFirstName());
-        userDetails.setEmailId(inputUserDetails.getEmailId());*/
-        userDetails.setParcelCount(inputUserDetails.getParcelCount());
 
-        return userService.updateParcelCount(userId, userDetails);
+        return userService.updateParcelCount(userId, inputUserDetails);
     }
 
     @PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

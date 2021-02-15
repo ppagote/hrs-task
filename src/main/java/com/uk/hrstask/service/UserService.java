@@ -2,6 +2,7 @@ package com.uk.hrstask.service;
 
 import com.uk.hrstask.exception.NotFoundException;
 import com.uk.hrstask.exception.UserCheckOutException;
+import com.uk.hrstask.model.InputUserDetails;
 import com.uk.hrstask.model.UserDetails;
 import com.uk.hrstask.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -27,14 +28,15 @@ public class UserService {
         return userRepository.findByHasCheckedOutFalse();
     }
 
-    /**
+    /* *//**
      * List users details which are checkout out
      *
      * @return List
-     */
+     *//*
     public List<UserDetails> listAllCheckedOutUsers() {
         return userRepository.findByHasCheckedOutTrue();
     }
+*/
 
     /**
      * Get the details of a User by Id
@@ -53,7 +55,6 @@ public class UserService {
      *
      * @param userDetails UserDetails Object
      * @return UserDetails Object
-     * @throws IncorrectDataException Invalid Input Data Exception
      */
     public UserDetails createUser(UserDetails userDetails) {
         return userRepository.save(userDetails);
@@ -63,12 +64,12 @@ public class UserService {
      * Logic to accept the parcel
      *
      * @param userId           unique user id
-     * @param inputUserDetails Input UserDetails Object
+     * @param inputUserDetails InputUserDetails Object
      * @return UserDetails Object
      * @throws NotFoundException     User Not found Exception
      * @throws UserCheckOutException User has checkout Exception
      */
-    public UserDetails updateParcelCount(long userId, UserDetails inputUserDetails)
+    public UserDetails updateParcelCount(long userId, InputUserDetails inputUserDetails)
             throws NotFoundException, UserCheckOutException {
         UserDetails userDetails = getDetailsOfUser(userId);
 
@@ -77,7 +78,7 @@ public class UserService {
         }
 
         userDetails.setParcelCount(inputUserDetails.getParcelCount());
-       /* userDetails.setCheckInTime(inputUserDetails.getCheckInTime());
+        /*userDetails.setCheckInTime(inputUserDetails.getCheckInTime());
         userDetails.setFirstName(inputUserDetails.getFirstName());
         userDetails.setEmailId(inputUserDetails.getEmailId());
         userDetails.setLastName(inputUserDetails.getLastName());*/

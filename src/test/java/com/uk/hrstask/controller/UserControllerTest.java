@@ -76,7 +76,7 @@ class UserControllerTest {
         assertThat(response.getContentAsString()).isEqualTo(Collections.emptyList());*/
     }
 
-    @Test
+   /* @Test
     void testListCheckedOutUsers() throws Exception {
         // Setup
 
@@ -111,7 +111,7 @@ class UserControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$").isArray())
                 .andExpect(MockMvcResultMatchers.jsonPath("$").isEmpty());
-    }
+    }*/
 
     @Test
     void testGetUserDetails() throws Exception {
@@ -189,7 +189,7 @@ class UserControllerTest {
         // Configure UserService.updateParcelCount(...).
         final UserDetails userDetails =
                 new UserDetails(new GregorianCalendar(2019, Calendar.JANUARY, 1).getTime(),
-                        null, false, 4, "firstname", "lastName",
+                        null, false, 5, "firstname", "lastName",
                         "emailId");
 
         ObjectMapper mapper = new ObjectMapper();
@@ -197,7 +197,7 @@ class UserControllerTest {
         ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
         String requestJson = ow.writeValueAsString(userDetails);
 
-        when(mockUserService.updateParcelCount(eq(0L), any(UserDetails.class))).thenReturn(userDetails);
+        when(mockUserService.updateParcelCount(eq(0L), any(InputUserDetails.class))).thenReturn(userDetails);
 
         // Run the test
         mockMvc.perform(put("/api/users/v1/{id}/updateparcel", 0)
@@ -207,13 +207,13 @@ class UserControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.parcelCount").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.parcelCount").isNotEmpty())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.parcelCount").value(4));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.parcelCount").value(5));
     }
 
     @Test
     void testUpdateParcelCountOfUser_UserServiceThrowsNotFoundException() throws Exception {
         // Setup
-        when(mockUserService.updateParcelCount(eq(0L), any(UserDetails.class)))
+        when(mockUserService.updateParcelCount(eq(0L), any(InputUserDetails.class)))
                 .thenThrow(new NotFoundException("User not found with id:: 0"));
 
         // Run the test
@@ -229,7 +229,7 @@ class UserControllerTest {
     @Test
     void testUpdateParcelCountOfUser_UserServiceThrowsUserCheckOutException() throws Exception {
         // Setup
-        when(mockUserService.updateParcelCount(eq(0L), any(UserDetails.class)))
+        when(mockUserService.updateParcelCount(eq(0L), any(InputUserDetails.class)))
                 .thenThrow(new UserCheckOutException("Cannot Accept Parcel as user has checked-out"));
 
         // Run the test

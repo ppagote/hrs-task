@@ -1,16 +1,17 @@
 # HRS Coding Challenge
 
-
-Scenario
-Receptionists have to accomplish various tasks throughout the day when operating a hotel. One of those tasks is to accept parcels for guests.
+Scenario Receptionists have to accomplish various tasks throughout the day when operating a hotel. One of those tasks is
+to accept parcels for guests.
 
 * It happens, that receptionists accept parcels for guests, that was already checked out of the hotel.
 * It happens from time to time, that guests forget to pick up their parcels before check-out and even forget it then.
 
 Requirements
 
-1. The receptionist needs a tracking tool that knows to any given time which guests are checked into the hotel and have not checked out, to allow the receptionist to decide whether to accept the parcel or not.
-2. The tracking tool should further allow the receptionist to check for parcels available for pick-up when the guest is checking out.
+1. The receptionist needs a tracking tool that knows to any given time which guests are checked into the hotel and have
+   not checked out, to allow the receptionist to decide whether to accept the parcel or not.
+2. The tracking tool should further allow the receptionist to check for parcels available for pick-up when the guest is
+   checking out.
 3. Use JAVA 8 & SpringBoot
 4. Don’t forget logging ☺
 5. Unit tests are a must, isn’t it?
@@ -18,29 +19,34 @@ Requirements
 Tasks
 
 * Document the usability and the design of your solution in a PDF file.
-* Build a RESTful JSON-API that supports the following use cases. Your implementation should be based on the Microservices architecture approach.
+* Build a RESTful JSON-API that supports the following use cases. Your implementation should be based on the
+  Microservices architecture approach.
 * Document your solution with a Swagger file served by the API.
 
-Deliverable
-Please provide your solution on GitHub repo or send a zip file named to us that contains: firstname-lastname.zip to us that contains:
+Deliverable Please provide your solution on GitHub repo or send a zip file named to us that contains:
+firstname-lastname.zip to us that contains:
 
 * The source code (buildable and runnable without changes) with Maven or Gradle build script
 * An executable Jar
-* Instructions to run the solution are documented in a readme.md
-  When shipping your solution, please let us know how long you took and where you did it. Don't artificially decrease the development time you tell us - we have good statistical measures and taking longer is not a bad thing at all.
+* Instructions to run the solution are documented in a readme.md When shipping your solution, please let us know how
+  long you took and where you did it. Don't artificially decrease the development time you tell us - we have good
+  statistical measures and taking longer is not a bad thing at all.
 
-In Scope
-We're interested to see how you produce production-ready code. By that, we focus on naming conventions, coding style, sensible design, and meaningful commenting. Perfect code ships at a shape, that enables colleagues to quickly understand the domain and codebase.
+In Scope We're interested to see how you produce production-ready code. By that, we focus on naming conventions, coding
+style, sensible design, and meaningful commenting. Perfect code ships at a shape, that enables colleagues to quickly
+understand the domain and codebase.
 
-We understand writing even a trivial application and having it production-ready is a lot of work. Please limit writing a lot of boilerplate - showing the
-intent and leaving "to-do" comments in your code is okay. However, make sure your solution works.
+We understand writing even a trivial application and having it production-ready is a lot of work. Please limit writing a
+lot of boilerplate - showing the intent and leaving "to-do" comments in your code is okay. However, make sure your
+solution works.
 
 Out of Scope
 
-* We don't expect you to use every design pattern you've ever heard of - only apply patterns when it makes sense to do so.
+* We don't expect you to use every design pattern you've ever heard of - only apply patterns when it makes sense to do
+  so.
 * We don't expect you to build a user interface.
-* We're not expecting you to have optimized the solution for performance or memory size - readability is more important than performance.
-
+* We're not expecting you to have optimized the solution for performance or memory size - readability is more important
+  than performance.
 
 <!-- TABLE OF CONTENTS -->
 
@@ -158,10 +164,27 @@ $ git clone https://github.com/ppagote/hrs-task.git
 $ cd hrs-task
 $ mvn spring-boot:run
 ```
-
 #### Running the application with Executable JAR
 
-The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it
+Run the jar by double-clicking on it
+or by using the command
+
+```shell
+$ git clone https://github.com/ppagote/hrs-task.git
+$ cd hrs-task/jar
+$ java -jar target/hrs-task-0.0.1-SNAPSHOT.jar
+```
+
+To shutdown the jar, follow the below mentioned steps on a Windows machine.
+
+* In command prompt execute the **jcmd** command to print a list of all running Java processes
+* **Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP**
+  with the actual process id of the running jar found out from executing the previous command
+* Press Ctrl+C
+
+#### Creating  Executable JAR and then running the application
+
+The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double-clicking on it
 or by using the command
 
 ```shell
@@ -176,7 +199,7 @@ To shutdown the jar, follow the below mentioned steps on a Windows machine.
 * In command prompt execute the **jcmd** command to print a list of all running Java processes
 * **Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP**
   with the actual process id of the running jar found out from executing the previous command
-
+* Press Ctrl+C
 ##### Accessing Data in H2 Database
 
 ###### H2 Console
@@ -225,13 +248,12 @@ $ mvn clean test
 
 * [Swagger](http://localhost:8080/swagger-ui/) - `http://localhost:8080/swagger-ui/`- Documentation & Testing
 * [Swagger](http://localhost:8080/v2/api-docs)
-  - `http://localhost:8080/v2/api-docs`- Documentation & Testing
-  
+    - `http://localhost:8080/v2/api-docs`- Documentation & Testing
+
 <!-- CONTACT -->
 
 ## Contact
 
 Pranav Pagote - pranav1990.pagote@gmail.com
 
-Project
-Link: [https://github.com/ppagote/hrs-task](https://github.com/ppagote/hrs-task.git)
+Project Link: [https://github.com/ppagote/hrs-task](https://github.com/ppagote/hrs-task.git)
