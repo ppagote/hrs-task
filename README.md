@@ -186,7 +186,7 @@ To shutdown the jar, follow the below mentioned steps on a Windows machine.
   with the actual process id of the running jar found out from executing the previous command
 * Press Ctrl+C
 
-#### Creating  Executable JAR and then running the application
+#### Creating executable JAR and then running the application
 
 The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double-clicking on it
 or by using the command
