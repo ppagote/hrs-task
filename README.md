@@ -68,8 +68,9 @@ Out of Scope
          <ul>
             <li><a href="#running-the-application-with-ide">Running the application with IDE</a></li>
             <li><a href="#running-the-application-with-maven">Running the application with Maven</a></li>
+            <li><a href="#running-the-application-with-executable-jar">Running the application with Executable JAR</a></li>
             <li>
-               <a href="#running-the-application-with-executable-jar">Running the application with Executable JAR</a>
+               <a href="#creating-executable-jar-and-then-running-the-application">Creating executable JAR and then running the application</a>
                <ul>
                   <li>
                      <a href="#accessing-data-in-h2-database">Accessing Data in H2 Database</a>
@@ -94,6 +95,7 @@ Out of Scope
             <li><a href="#testing-with-maven">Testing with Maven</a></li>
          </ul>
       </li>
+ <li><a href="#documentation">Documentation</a></li>
       <li><a href="#contact">Contact</a></li>
    </ul>
 </details>
@@ -138,6 +140,8 @@ Out of Scope
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing
 purposes.
+
+## Installing
 
 #### Running the application with IDE
 
